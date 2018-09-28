@@ -1,6 +1,8 @@
 @extends('layouts.default')
 
-@section
+@section('head')
+    @include('layouts.includes.head')
+@endsection
 
 @section('body')
     <div class="container">
