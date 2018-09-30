@@ -1,0 +1,1 @@
+<link rel="shortcut icon" href="{{ asset('admintheme/assets/demo/default/media/img/logo/favicon.ico') }}" />

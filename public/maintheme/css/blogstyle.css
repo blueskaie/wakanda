@@ -1,0 +1,76 @@
+
+
+
+/* This is Style for blog List */
+.category .single_news_box .content_box .news_title a, .archive .single_news_box .content_box .news_title a { font-size: 18px; color: #214f77; font-weight: 600;}
+
+
+.single_news_box {
+    align-items: center;    
+    display: flex;
+    /* float: left; */
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 20px;
+	line-height: 1.2em;
+}
+.single_news_box:hover {
+    background-color: #cfd5d7;
+}
+
+.single_news_box .news_img {
+    width: 113px;
+}
+
+.single_news_box.loadmore .news_img {
+    max-width: 150px;
+    width: 100% !important;
+}
+
+.category_page .single_news_box.loadmore .news_img {
+    max-width: 250px;
+    width: 100% !important;
+}
+
+.alm-reveal .news_img {
+    max-width: 300px !important;
+}
+
+
+.single_news_box .content_box {
+    width: 84%;
+    margin-left: 10px;
+}
+.single_news_box .content_box .news_title a {
+    font-size: 15px;
+    color: #333;
+	font-weight: 600;
+}
+.content_box .time_box {
+    font-size: 12px;
+}
+
+.category_page .single_news_box .content_box {
+    width: 100%;
+    margin-left: 0;
+}
+
+.single_news_box .content_box .news_title a {
+    font-size: 15px;
+    color: #333;
+	font-weight: 600;
+}
+
+.news_title h3 {
+    font-size: 20px;
+    color: #214f77;
+    text-transform: uppercase;
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.bloglist{
+    background-color: #fff;
+    /* padding: 0 20px; */
+}

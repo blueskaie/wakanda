@@ -1,7 +1,10 @@
 @extends('layouts.default')
 
 @section('head')
+
     @include('layouts.includes.head')
+    @yield('mycss')
+    
 @endsection
 
 @section('body')
@@ -11,11 +14,12 @@
         @include('layouts.includes.topmenubar')
 
         @yield('content')
-
+        
         @include('layouts.includes.footer')
     </div>
 @endsection
 
 @section('js')
     @include('layouts.includes.js')
+    @yield('myjs')
 @endsection
