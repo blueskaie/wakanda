@@ -1,0 +1,31 @@
+wp_posts -> posts
+	ID -> id
+	post_author -> user_id (relationship (user->post))
+	post_date -> created_at	
+	post_modified -> updated_at
+	post_date_gmt -> created_at_gmt	
+	post_modified -> updated_at_gmt
+	
+	post_excerpt default Null
+	to_ping default Null
+	pinged default Null
+
+wp_comments -> comments 
+	comment_id => id
+	comment_parent => comment_id (for relationship between one table)
+	comment_date => created_at
+	comment_date_gmt => updated_at
+	comment_author_IP => comment_author_ip
+
+wp_users -> users
+	ID-> id
+	user_login->name
+	user_pass-> password
+	user_nicename-> nicename
+	user_email -> email
+	user_url -> url
+	user_registered -> created_at
+	user_activation_key -> remember_token
+	
+	added updated_at
+	added email_verified_at
