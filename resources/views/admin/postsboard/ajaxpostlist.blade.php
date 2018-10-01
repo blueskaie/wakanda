@@ -37,7 +37,7 @@
                 {{strlen($post->post_title)>50?substr($post->post_title, 0, 50).'...':$post->post_title}}
             </td>
             <td class="hidden-xs hidden-md">
-                {{$post->post_date}}
+                {{$post->created_at}}
             </td>
             <td class="hidden-xs hidden-md">
                 {{$post->post_type}}

@@ -15,7 +15,7 @@ class AdminCheck
      */
     public function handle($request, Closure $next)
     {
-        var_dump($request->session());
+        // var_dump($request->session());
         return $next($request);
     }
 }

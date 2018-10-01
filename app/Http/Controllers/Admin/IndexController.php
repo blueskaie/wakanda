@@ -24,7 +24,8 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return "This is admin page";
+        // return "This is admin page";
+        return redirect('admin/dashboard');
     }
 
     public function loginPage()
