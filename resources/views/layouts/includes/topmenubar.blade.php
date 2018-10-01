@@ -14,16 +14,16 @@
                     </ul>
                 </div> -->
             </div>
-            <div class="col-lg-4 search hidden-xs hidden-sm col-md-3">
+            <div class="col-lg-3 search col-xs-10 col-xs-9 col-md-3">
                 <div class="wrap">
                     <form action="#" method="post" class="form">
                         <div class="pull-left txt"><input type="text" class="form-control" placeholder="Search Topics"></div>
-                        <div class="pull-right"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></div>
+                        <div class="pull-right"><button class="btn btn-default" type="button" style="width:40px;height:43px"><i class="fa fa-search"></i></button></div>
                         <div class="clearfix"></div>
                     </form>
                 </div>
             </div>
-            <div class="col-lg-1 col-xs-12 col-sm-1 col-md-1 avt">
+            <div class="col-lg-2 col-xs-2 col-sm-3 col-md-1 avt">
                 <!-- <div class="stnt pull-left">                            
                     <form action="http://forum.azyrusthemes.com/03_new_topic.html" method="post" class="form">
                         <button class="btn btn-primary">Start New Topic</button>
@@ -32,15 +32,15 @@
                 <!-- <div class="env pull-left"><i class="fa fa-envelope"></i></div> -->
                 @guest
                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    
+                    <span class="hidden-xs">|</span>
                     @if (Route::has('register'))
-                        | <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                     @endif       
                 @else
                 <div class="avatar pull-right dropdown">
                     <a data-toggle="dropdown" href="#"><img src="{{ asset('maintheme/images/avatar.jpg') }} " alt="" /></a> 
                     <!-- <b class="caret"></b> -->
-                    <div class="status green">&nbsp;</div>
+                    <!-- <div class="status green">&nbsp;</div> -->
                     <ul class="dropdown-menu" role="menu">
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Profile</a></li>
                         <li role="presentation"><a role="menuitem" tabindex="-2" href="#">Inbox</a></li>
