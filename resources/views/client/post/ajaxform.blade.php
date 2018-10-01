@@ -1,3 +1,5 @@
+
+
 <div  id="ajaxform" style="margin-left:50px">
     <div class="post">
         <!-- <form class="form"> -->
@@ -14,6 +16,10 @@
                         <!-- <input type="text" name="note" id="post_id" value="{{$post_id}}" />
                         <input type="text" name="note" id="comment_id" value="{{$comment_id}}" /> -->
                         <textarea name="reply" id="reply" placeholder="Type your message here"></textarea>
+                        <!-- <button id="toggle">toggle</button>
+                        <div class="field">
+                            <textarea id="text-custom-trigger" class="emojiable-question" placeholder="Your Question"></textarea>
+                        </div> -->
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -40,3 +46,5 @@
         <!-- </form> -->
     </div>
 </div>
+
+

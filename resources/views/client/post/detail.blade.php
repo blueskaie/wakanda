@@ -1,4 +1,4 @@
-<div class="post">
+<div class="post" id="post_detail">
     <div class="topwrap">
         <div class="userinfo pull-left">
             <div class="avatar">
@@ -23,15 +23,16 @@
             <a href="#" class="down"><i class="fa fa-thumbs-o-down"></i>3</a>
         </div>
 
-        <div class="prev pull-left">                                        
+        <!-- <div class="prev pull-left">                                        
             <a href="#"><i class="fa fa-reply"></i></a>
-        </div>
+            <a onclick="showCreateForm({{$post->id}}, 0)"><i class="fa fa-reply" style="line-height: inherit; color:#989c9e">&nbsp;&nbsp;&nbsp;reply</i></a>
+        </div> -->
 
         <div class="posted pull-left"><i class="fa fa-clock-o"></i> Posted on : 20 Nov @ 9:30am</div>
 
         <div class="next pull-right">                                        
-            <a href="#"><i class="fa fa-share"></i></a>
-
+            <!-- <a href="#"><i class="fa fa-share"></i></a> -->
+            <a onclick="showCreateForm({{$post->id}}, 0)"><i class="fa fa-reply" style="line-height: inherit; color:#989c9e"></i></a>
             <a href="#"><i class="fa fa-flag"></i></a>
         </div>
 

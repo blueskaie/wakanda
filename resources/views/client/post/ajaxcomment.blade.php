@@ -17,13 +17,13 @@
         <div class="clearfix"></div>
     </div>                              
     <div class="postinfobot row">
-        <div class="col-xs-3">
-            <!-- <a href="#" class="up"><i class="fa fa-thumbs-o-up"></i>10</a>
-            <a href="#" class="down"><i class="fa fa-thumbs-o-down"></i>1</a> -->
-        </div>
-        <div class="col-xs-6"><i class="fa fa-clock-o"></i> Posted on : 20 Nov @ 9:45am</div>
-        <div class="col-xs-3">                                        
-            <a onclick="showCreateForm({{$comment->comment_post_id}},{{$comment->id}})"><i class="fa fa-reply" style="line-height: inherit; color:#989c9e">&nbsp;&nbsp;&nbsp;reply</i></a>
+        <!-- <div class="col-xs-3">
+            <a href="#" class="up"><i class="fa fa-thumbs-o-up"></i>10</a>
+            <a href="#" class="down"><i class="fa fa-thumbs-o-down"></i>1</a>
+        </div> -->
+        <div class="hidden-xs col-sm-8"><i class="fa fa-clock-o"></i> Posted on : 20 Nov @ 9:45am</div>
+        <div class="col-xs-12 col-sm-4">                                        
+            <a onclick="showCreateForm({{$comment->comment_post_id}},{{$comment->id}})"><i class="fa fa-reply pull-right" style="line-height: inherit; color:#989c9e">&nbsp;&nbsp;&nbsp;reply</i></a>
         </div>
         <div class="clearfix"></div>
     </div>

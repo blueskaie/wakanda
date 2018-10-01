@@ -2,6 +2,11 @@
 
 @section('mycss')
     <link href="{{ asset('maintheme/css/blogstyle.css') }}" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ asset('plugins/emoji/css/jquery.emojipicker.css') }}">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="{{ asset('plugins/emoji/js/jquery.emojipicker.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/emoji/css/jquery.emojipicker.tw.css') }}">
+    <script type="text/javascript" src="{{ asset('plugins/emoji/js/jquery.emojis.js') }}"></script> -->
 @endsection
 
 @section('content')
@@ -18,11 +23,13 @@
                 <div class="col-lg-8 col-md-8">
                     @if ($post)
                         @include('client/post/detail')
+                        <div id="comments-list">
                         @if ($comments)
                             {{ $comments->links() }}
                             @include('client/post/comments')
                             {{ $comments->links() }}
                         @endif
+                        </div>
                     @else
                         <div>There is no tranctions</div>
                     @endif
@@ -131,20 +138,23 @@
      function showCreateForm(post_id, comment_id){
         event.defaultPrevented;
         // alert(comment_id);
+        $("#ajaxform").remove();
         $.ajax({
             type: "GET", 
             url: "../comments/create",
             data: {'post_id':post_id, 'comment_id':comment_id},
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             success: function(result){
-                $("#comment-"+comment_id).parent().append(result);
+                if (comment_id)
+                    $("#comment-"+comment_id).parent().append(result);
+                else
+                    $("#post_detail").after(result);
             }
         });
      };
      function postReply(post_id, comment_id){
         event.defaultPrevented;
         reply_text = $("#reply").val();
-        
         $.ajax({
             type: "POST", 
             url: "../comments",
@@ -152,7 +162,10 @@
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             success: function(result){
                 $("#ajaxform").remove();
-                $("#comment-"+comment_id).parent().append("<div style='margin-left:50px'>"+result+"</div>");          
+                if (comment_id)
+                    $("#comment-"+comment_id).parent().append("<div style='margin-left:50px'>"+result+"</div>");          
+                else
+                    $("#comments-list").append("<div style='margin-left:50px'>"+result+"</div>");
             },
             error: function (jqXHR, exception) {
                 var msg = '';
@@ -176,4 +189,25 @@
         });
      }
     </script>
+    <!-- <script type="text/javascript">
+        $(document).ready(function(e) {
+            $('#toggle').click(function(e) {
+            e.preventDefault();
+            $('#text-custom-trigger').emojiPicker({
+                width: '300px',
+                height: '200px',
+                button: false
+            });
+            $('#text-custom-trigger').emojiPicker('toggle');
+            });
+
+            // keyup event is fired
+            $(".emojiable-question, .emojiable-option").on("keyup", function () {
+            //console.log("emoji added, input val() is: " + $(this).val());
+            });
+
+        });
+    </script> -->
+
+
 @endsection

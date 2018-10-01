@@ -19,17 +19,20 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
-
-
-Route::get('/admin', 'Admin\IndexController@index')->name('admin');
-
-// Dashboard
-Route::get('/admin/dashboard', 'Admin\DashboardController@index')->name('admindashboard');
-
-// UsersDashboard
-Route::get('/admin/usersboard', 'Admin\UsersController@index')->name('usersboard');
 Route::post('/users/delete/{id}', 'Admin\UsersController@delete')->name('userdelete');
+
+Route::group(['prefix'=>'admin'], function(){
+    Route::get('', 'Admin\IndexController@index')->name('admin');
+    // Dashboard
+    Route::get('dashboard', 'Admin\DashboardController@index')->name('admindashboard');
+    // UsersDashboard
+    Route::get('usersboard', 'Admin\UsersController@index')->name('usersboard');
+
+    // PostsDashboard
+    // Route::get('postspannel', 'Admin\PostController@dashboard');
+    // Route::get('ajax-pagination','Admin\PostController@ajaxPagination')->name('ajax.pagination');
+    Route::resource('posts', 'Admin\PostController');
+});
 
 
 Route::resource('posts', 'PostController');

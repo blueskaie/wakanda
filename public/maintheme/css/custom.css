@@ -1224,5 +1224,10 @@ a.down:hover {
     }
 }
 
+#post_detail img, #comments-list img{
+    width: 100%;
+    height: auto;
+}
+
 
 

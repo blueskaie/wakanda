@@ -17,6 +17,7 @@ License: You must have a valid license purchased only from themeforest(the above
         @yield('meta')
 		<!--begin::Web font -->
 		<meta name="csrf-token" content="{{ csrf_token() }}">
+		
         @include('layouts/adminincludes/font')
 		<!--end::Web font -->
         <!--begin::Base Styles -->  

@@ -88,10 +88,10 @@
                 </div>
             </li>
             <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
-                <a  href="javascript:;" class="m-menu__link m-menu__toggle">
+                <a  href="/admin/posts" class="m-menu__link m-menu__toggle">
                     <i class="m-menu__link-icon flaticon-share"></i>
                     <span class="m-menu__link-text">
-                        Blogs
+                        Posts
                     </span>
                     <i class="m-menu__ver-arrow la la-angle-right"></i>
                 </a>
@@ -99,22 +99,46 @@
                     <span class="m-menu__arrow"></span>
                     <ul class="m-menu__subnav">
                         <li class="m-menu__item " aria-haspopup="true" >
-                            <a  href="components/icons/flaticon.html" class="m-menu__link ">
+                            <a  href="/admin/posts/create" class="m-menu__link ">
                                 <i class="m-menu__link-bullet m-menu__link-bullet--dot">
                                     <span></span>
                                 </i>
                                 <span class="m-menu__link-text">
-                                    Blogs
+                                    Creat new Post
                                 </span>
                             </a>
                         </li>
+                        <li class="m-menu__item " aria-haspopup="true" >
+                            <a  href="/admin/posts" class="m-menu__link ">
+                                <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                    <span></span>
+                                </i>
+                                <span class="m-menu__link-text">
+                                    All Posts
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover">
+                <a  href="javascript:;" class="m-menu__link m-menu__toggle">
+                    <i class="m-menu__link-icon flaticon-share"></i>
+                    <span class="m-menu__link-text">
+                        Comments
+                    </span>
+                    <i class="m-menu__ver-arrow la la-angle-right"></i>
+                </a>
+                <div class="m-menu__submenu ">
+                    <span class="m-menu__arrow"></span>
+                    <ul class="m-menu__subnav">
                         <li class="m-menu__item " aria-haspopup="true" >
                             <a  href="components/icons/fontawesome.html" class="m-menu__link ">
                                 <i class="m-menu__link-bullet m-menu__link-bullet--dot">
                                     <span></span>
                                 </i>
                                 <span class="m-menu__link-text">
-                                    All Blogs
+                                    All Comments
                                 </span>
                             </a>
                         </li>
