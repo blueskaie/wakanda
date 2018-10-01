@@ -58,6 +58,7 @@ class PostController extends Controller
     public function show($id)
     {
         //
+        dd("show");
     }
 
     /**
@@ -69,6 +70,9 @@ class PostController extends Controller
     public function edit($id)
     {
         //
+        $post = Post::find($id);
+        // dd($post);
+        return view('admin/postsboard/edit', ['post'=>$post]);
     }
 
     /**
@@ -80,7 +84,14 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd("update");
+        $update = $request->input('post');
+        $post = Post::find($id);
+        $post->post_title = $update['title'];
+        $post->post_content = $update['content'];
+        $post->updated_at_gmt = date('Y-m-d H:i:s');
+        $post->save();
+        return redirect('admin/posts');
     }
 
     /**
@@ -91,8 +102,6 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
-        // dd($id);
         return $result = Post::destroy($id);
     }
 }

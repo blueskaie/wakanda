@@ -39,7 +39,6 @@
         $("#post_content").maxlength({alwaysShow:!0,threshold:5,placement:"top-right",warningClass:"m-badge m-badge--brand m-badge--rounded m-badge--wide",limitReachedClass:"m-badge m-badge--brand m-badge--rounded m-badge--wide"});
         $("#post_title").maxlength({alwaysShow:!0,threshold:5,placement:"top-right",warningClass:"m-badge m-badge--brand m-badge--rounded m-badge--wide",limitReachedClass:"m-badge m-badge--brand m-badge--rounded m-badge--wide"});
 	</script>
-
 @endsection
 
 @section('content')
@@ -48,21 +47,22 @@
         <div class="m-portlet__head-caption">
             <div class="m-portlet__head-title">
                 <h3 class="m-portlet__head-text">
-                    Create New Post
+                    Edit this Post
                 </h3>
             </div>
         </div>
     </div>
     <!--begin::Form-->
-    <form action="/admin/posts" method="POST" class="m-form m-form--fit m-form--label-align-right">
-        {{ csrf_field() }}    
+    <form action="/admin/posts/{{$post->id}}" method="POST" class="m-form m-form--fit m-form--label-align-right">
+        {{ csrf_field() }}
+        {{ method_field('PATCH') }}
         <div class="m-portlet__body">
             <div class="form-group m-form__group row">
                 <label class="col-form-label col-lg-3 col-md-3 col-sm-12">
                     Title
                 </label>
                 <div class="col-lg-6 col-md-9 col-sm-12">
-                    <input type='text' class="form-control" id="post_title" name="post[title]" maxlength="100" type="text"/>
+                    <input type='text' class="form-control" id="post_title" name="post[title]" maxlength="100" type="text" value="{{$post->post_title}}"/>
                     <span class="m-form__help" style="display:none">
                         Please type the title of the new post
                     </span>
@@ -73,7 +73,7 @@
                     Content
                 </label>
                 <div class="col-lg-6 col-md-9 col-sm-12">
-                    <textarea class="form-control" id="post_content" maxlength="1000"  name="post[content]" placeholder="" rows="10"></textarea>
+                    <textarea class="form-control" id="post_content" maxlength="1000"  name="post[content]" placeholder="" rows="10" >{!!$post->post_content!!}</textarea>
                     <span class="m-form__help" style="display:none">
                         Bootstrap maxlength supports textarea as well as inputs
                     </span>

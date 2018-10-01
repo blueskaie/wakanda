@@ -46,7 +46,7 @@
                 {{$post->post_status}}
             </td>
             <td>
-                <a class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" onclick="editPost({{$post->id}})"><i class="la la-edit"></i></a>
+                <a class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" href="/admin/posts/{{$post->id}}/edit"><i class="la la-edit"></i></a>
                 <a class="m-portlet__nav-link btn m-btn m-btn--hover-danger m-btn--icon m-btn--icon-only m-btn--pill" onclick="deletePost({{$post->id}})"><i class="la la-trash"></i></a>
             </td>
         </tr>
