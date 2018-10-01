@@ -15,7 +15,7 @@ class PostController extends Controller
 
     public function index(Request $request)
     {
-        $posts = Post::where('post_type','=','post')->orderBy('post_date', 'desc')->paginate(10);
+        $posts = Post::where('post_type','=','post')->orderBy('created_at', 'desc')->paginate(10);
         if ($request->ajax()){
             return view('admin/postsboard/ajaxpostlist', compact('posts'));
         }
@@ -43,10 +43,8 @@ class PostController extends Controller
         $newpost = new Post;
         $newpost->post_title = $post['title'];
         $newpost->post_content = $post['content'];
-        $newpost->post_date = date('Y-m-d H:i:s');
-        $newpost->post_date_gmt = date('Y-m-d H:i:s');
-        $newpost->post_modified = date('Y-m-d H:i:s');
-        $newpost->post_modified_gmt = date('Y-m-d H:i:s');
+        $newpost->created_at_gmt = date('Y-m-d H:i:s');
+        $newpost->updated_at_gmt = date('Y-m-d H:i:s');
         $newpost->save();
         return redirect('admin/posts');
     }

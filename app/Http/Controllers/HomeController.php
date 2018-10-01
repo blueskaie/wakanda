@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Post::where('post_type','=','post')->orderBy('post_date', 'desc')->paginate(20);
+        $posts = Post::where('post_type','=','post')->orderBy('created_at', 'desc')->paginate(20);
         return view('client/home/index',['posts'=>$posts]);
     }
 }
